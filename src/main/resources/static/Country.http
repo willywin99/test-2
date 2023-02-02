@@ -1,0 +1,58 @@
+# Read all Country
+GET http://localhost:9000/country HTTP/1.1
+
+###
+# Read Country by Id
+GET http://localhost:9000/country/4 HTTP/1.1
+
+###
+# Create Country
+POST http://localhost:9000/country HTTP/1.1
+content-type: application/json
+
+{
+  "code": "AU",
+  "name": "Australia",
+  "region": {"id": "2"}
+}
+
+###
+# Create Country with v2
+POST http://localhost:9000/country/v2 HTTP/1.1
+Content-Type: application/json
+
+{
+  "code": "T1",
+  "name": "test 1",
+  "regionId": 6
+}
+
+###
+# Create with DTO by Model Mapper
+POST http://localhost:9000/country/v3 HTTP/1.1
+Content-Type: application/json
+
+{
+  "code": "EN",
+  "name": "England",
+  "regionId": 3
+}
+
+###
+# Search by Name with Param JPQL
+GET http://localhost:9000/region/jpql?name=Asia
+
+###
+# Edit Country
+PUT http://localhost:9000/country/6 HTTP/1.1
+content-type: application/json
+
+{
+  "code": "TD",
+  "name": "test delete edited",
+  "region": {"id": 6}
+}
+
+###
+# Delete Country
+DELETE http://localhost:9000/country/6 HTTP/1.1

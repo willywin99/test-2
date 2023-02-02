@@ -1,0 +1,18 @@
+# Read all Employee
+GET http://localhost:9000/employee HTTP/1.1
+
+###
+# Read Employee by Id
+GET http://localhost:9000/employee/4 HTTP/1.1
+
+###
+# Create Employee
+POST http://localhost:9000/employee HTTP/1.1
+content-type: application/json
+
+{
+  "name": "willy",
+  "email": "willywinsianturi@gmail.com",
+  "phone": 123456789,
+  "user": {"id": "1"}
+}

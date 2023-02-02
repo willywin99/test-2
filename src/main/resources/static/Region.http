@@ -1,0 +1,36 @@
+# Read all Region
+GET http://localhost:9000/region HTTP/1.1
+
+###
+# Read Region by Id
+GET http://localhost:9000/region/5 HTTP/1.1
+
+###
+# Read Region by Id with Parameter
+GET http://localhost:9000/region/v2?id=4 HTTP/1.1
+
+###
+# Search by Name with Param JPQL
+GET http://localhost:9000/region/jpql?name=Asia
+
+###
+# Create Region
+POST http://localhost:9000/region HTTP/1.1
+content-type: application/json
+
+{
+  "name": "test 2"
+}
+
+###
+# Update Region
+PUT http://localhost:9000/region/8 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "test 2 edited"
+}
+
+###
+# Delete Region
+DELETE http://localhost:9000/region/8 HTTP/1.1
